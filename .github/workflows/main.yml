@@ -57,6 +57,9 @@ jobs:
           EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
           EXCLUDE_FORKED_REPOS: true
 
+      - name: productive-box-in-readme
+        uses: vnoctem/productive-box-in-readme@v1.1
+        
       # Commits all changed files to the repository
       - name: Commit to the repo
         run: |
@@ -67,5 +70,3 @@ jobs:
           git commit -m 'Update generated files' || echo
           git push
 
-      - name: productive-box-in-readme
-        uses: vnoctem/productive-box-in-readme@v1.1
